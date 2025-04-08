@@ -1,6 +1,8 @@
+import { useState } from "react";
 import "./App.css";
 import Actors from "./components/actors";
 import Books from "./components/books";
+import Counter from "./components/Counter";
 import Food from "./components/food";
 import Singers from "./components/singers";
 import Todo from "./components/todo";
@@ -22,9 +24,13 @@ function App() {
     {id:4, name:"History", price: 100},
     {id:5, name:"Psychology", price: 150},
   ]
+
+  const [color, setColor] = useState('black')
   return (
     <>
       <h1>Vite + React</h1>
+        <h1 style={{color:color}} >I am navbar</h1>
+      <Counter setColor={setColor}></Counter>
 
       <Books books={books}></Books>
       {
